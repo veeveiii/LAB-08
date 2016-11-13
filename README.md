@@ -413,6 +413,43 @@ execute next line
 1.	ถ้าค่าที่ผู้ใช้ป้อน มากกว่า ค่าที่สุ่มมาได้ ให้พิมพ์ ```“Too Hight, You loss!!”``` ออกทางหน้าจอ
 2.	ถ้าค่าที่ผู้ใช้ป้อน น้อยกว่า ค่าที่สุ่มมาได้ ให้พิมพ์ ```“Too Low, You loss!!”```ออกทางหน้าจอ
 3.	ถ้าค่าที่ผู้ใช้ป้อน เท่ากับ ค่าที่สุ่มมาได้ ให้พิมพ์ ```“Okay, You win!!”``` ออกทางหน้าจอ
+###จากการทดลองได้ผลดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15045773_1136897746430475_349795455_n.png?oh=18aff33fe0170501b8f6ee7c82a69641&oe=582ACCD6)
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15049650_1136898689763714_353264894_n.png?oh=00cdf57815a67b44eafb2125c47a2d02&oe=5829AC63)
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15058045_1136898693097047_1228918117_n.png?oh=d6708fe5f62a1e570b80fc2de0281a2d&oe=5829CF74)
+###CODE
+```
+using System;
+
+namespace Lab8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {/*Ailada S.*/
+            Random random = new Random();
+            int randomNumber = random.Next(0, 100);
+            Console.WriteLine("Number Random : " + randomNumber);
+            Console.Write("Please Enter Number : ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            if (a > randomNumber)
+            {
+                Console.WriteLine("Too Hight, You loss!!");
+            }
+            if (a < randomNumber)
+            {
+                Console.WriteLine("Too Low, You loss!!");
+            }
+            if (a == randomNumber)
+            {
+                Console.WriteLine("Okay, You win!!");
+            }
+
+        }
+    }
+}
+```
+<hr>
 
 ###1.2.2.	คำสั่ง ```if…else```
 
