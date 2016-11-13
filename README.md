@@ -501,6 +501,38 @@ this line is always execute
 
 ###1.2.3.	คำสั่ง ```if``` ซ้อนกัน (nested if)
 คำสั่ง ```if``` สามารถเขียนซ้อนกันเป็นชั้นได้ เรียกว่า nested if มีรูปแบบดังนี้
+###จากการทดลองได้ผลดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15058019_1136998719753711_248344472_n.png?oh=800019a7278b03caf27e571bba1756ec&oe=582ABA6D)
+
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15050339_1136998716420378_908895222_n.png?oh=bf2bc8fb2a4e74effed06ff58d677cb7&oe=5829DFA0)
+
+###CODE
+```
+using System;
+
+namespace Lab8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {/*Ailada S.*/
+            Random random = new Random();
+            int randomNumber = random.Next(0, 100);
+            Console.WriteLine("Number Random : " + randomNumber);
+            Console.Write("Please Enter Number : ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            if (a == randomNumber)
+            {
+                Console.WriteLine("Hooray, You win!!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, You loss!!");
+            }
+        }
+    }
+}
+```
 ####รูปแบบของคำสั่ง nested if
 ```cs
     if (condition)
@@ -577,7 +609,7 @@ Grade C
 
 1.	ระดับคะแนนที่จะนำมาตัดเกรด ได้จากการสุ่ม มีค่าจาก 0 ถึง 100
 2.	ตัดเกรดโดยใช้เกณฑ์ตามตารางต่อไปนี้ 
-
+3. รูปแบบการพิมพ์คือ score: [sss] grade: [gg] เมื่อ sss คือคะแนน และ gg คือ เกรดที่ได้
 ระดับคะแนน|เกรด
 :----|:----:
 80-100|	A
@@ -588,8 +620,68 @@ Grade C
 55-59|	D+
 50-54|	D
 0-49|	F
+###จากโจทย์ได้ผลการทดลองดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15032379_1137017869751796_322626272_n.png?oh=b32ead3c3dc2c7d8c1e4da825a8a303b&oe=582A9B11)
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15032493_1137017866418463_44601690_n.png?oh=dba436b91add4789303312a61f9f78fd&oe=582AC441)
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15049547_1137017873085129_1606497905_n.png?oh=fe121bcb2404e164908dd744216db87a&oe=582AA90A)
+###CODE
+```
+using System;
 
-3. รูปแบบการพิมพ์คือ score: [sss] grade: [gg] เมื่อ sss คือคะแนน และ gg คือ เกรดที่ได้
+namespace Lab8
+{
+    class Program
+    {/*Ailda S.*/
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int sss = random.Next(0, 100);
+
+            if (sss < 50)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : F");
+            }
+            else if (sss < 55)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : D");
+            }
+            else if (sss < 60)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : D+");
+            }
+            else if (sss < 65)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : C");
+            }
+            else if (sss < 70)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : C+");
+            }
+            else if (sss < 75)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : B");
+            }
+            else if (sss < 80)
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : B+");
+            }
+            else
+            {
+                Console.WriteLine("Score : " + sss);
+                Console.WriteLine("Grade : A");
+            }
+        }
+    }
+}
+```
+<hr>
 
 ###1.2.5. คำสั่ง ```switch```
 
@@ -667,7 +759,8 @@ thu|	Thursday	|Orange
 fri|	Friday	|Blue
 sat|	Saturday	|Purple
 อื่นๆ|	 ---|	---
-
+###จากโจทย์ทำการทดลองได้ผลดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15046413_1137022346418015_830896090_n.png?oh=ca3d6941005a46e992457f1ea750833a&oe=582AA124)
 
 ##Reference
 เนื้อหาในส่วนนี้เป็นอ้างอิงสำหรับการเขียนโปรแกรม
@@ -698,5 +791,5 @@ TimeoutException|The time interval allotted to an operation has expired.
 UriFormatException|An invalid Uniform Resource Identifier (URI) is used. 
 
 <hr>
-Ailada Samingkaew
+Ailada Samingkaew 57030249
 <hr>
