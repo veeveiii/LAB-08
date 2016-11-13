@@ -337,7 +337,19 @@ public class ExceptionLearning
     }
  }
 ````
-
+###ผลการทดลอง
+1.DivideByZeroException
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15032382_1136884823098434_2138416481_n.png?oh=937552005d532893cd86b3eb124e6da8&oe=582AEDA9)
+<hr>
+2.NullReferenceException
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15057988_1136884826431767_905911001_n.png?oh=62bc822ca2a417c5ec0ff358f463b2cc&oe=582AE71F)
+<hr>
+3.FileNotFoundException
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15058057_1136884819765101_145411477_n.png?oh=3066e419fec1416003d0566e68a23d58&oe=5829F046)
+<hr>
+4.FormatException
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15050250_1136884816431768_374712044_n.png?oh=d690fd3f4b9b8a674281d9ac2097ead2&oe=582AD160)
+<hr>
 ###เรื่องของ exception นี้ศึกษาเพิ่มเติมได้ [ที่นี่](http://msdn.microsoft.com/en-us/library/vstudio/2w8f0bss%28v=vs.100%29.aspx)
 
 ##1.2.	การเปลี่ยนทิศทางแบบมีเงื่อนไข (Conditional Branching)
