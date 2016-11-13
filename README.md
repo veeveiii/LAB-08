@@ -50,6 +50,38 @@ Line 5
 Line 2
 Line 9
 ```
+###จากโจทย์ได้ผลการทดลองดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15058547_1136858209767762_1603580261_n.png?oh=6ac5d63ce7638094485038441b2e8bd7&oe=582AF75F)
+###CODE
+```
+using System;
+
+
+namespace GOTOtest
+{
+    class Program
+    {/*Ailada S.*/
+        static void Main(string[] args)
+        {
+        line1: Console.WriteLine("Line 1");
+            goto line4;
+        line2: Console.WriteLine("Line 2");
+            goto line9;
+        line3: Console.WriteLine("Line 3");
+        line4: Console.WriteLine("Line 4");
+        line5: Console.WriteLine("Line 5");
+            goto line2;
+        line6: Console.WriteLine("Line 6");
+        line7: Console.WriteLine("Line 7");
+        line8: Console.WriteLine("Line 8");
+        line9: Console.WriteLine("Line 9");
+            goto lineEnd;
+        line10: Console.WriteLine("Line 10");
+        lineEnd:;
+        }
+    }
+}
+```
 ###1.1.2. try…catch…finally
 ประโยค ```try…catch…finally``` ใช้สำหรับการดักจับและจัดการข้อผิดพลาดของโปรแกรม ทั้งขณะทำงาน (Run Time Process) หรือในขณะเริ่มต้นทำงาน (Init Process) โดยเราจะวางคำสั่งที่คาดการว่าจะเกิดข้อผิดพลาดขึ้นไว้ในบล็อกของ ```Try``` และวางส่วนจัดการข้อผิดพลาดไว้ในบล็อกของ ```catch``` และถ้ามีการดำเนินการใดๆ ที่ต้องทำทั้งในกรณีที่มีและไม่มีข้อผิดพลาด ก็จะใส่ไว้ในบล็อกของ ```Finally``` ในคำสั่งนี้สามารถเขียนบล็อกของ ```catch``` ได้หลายบล็อก คำสั่งนี้มีประโยชน์มากในการทำงานกับระบบอินเตอร์เน็ต โดยเฉพาะในกรณีที่การเชื่อมต่อไม่เสถียร เพราะจะช่วยป้องกันการค้างของโปรแกรมของเราขณะเรียกข้อมูลจาก network ได้
 **ตัวอย่าง** โปรแกรมที่ไม่ได้ใช้คำสั่ง ```try…catch…finally```
@@ -143,6 +175,9 @@ public class TryCatch
      }
  }
 ```
+###ผลที่ได้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15033753_1136863939767189_1277847668_n.png?oh=532764b5191ad2afbe8733651c7c6cde&oe=5829BB7F)
+<hr>
 ###2.
 ``` csharp
 using System;
@@ -157,6 +192,35 @@ public class TryCatch
      }
  }
 ```
+###จากCODEเดิมผลERRORและทำการแก้CODEได้ดังต่อไปนี้
+using System;
+
+```
+namespace Lab8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {/*Ailada S.*/
+            object o2 = null;
+            try
+            {
+                int a = 0;
+                int b = 10;
+                b /= a;
+                Console.WriteLine(a);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}
+```
+###ได้ผลดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15033777_1136870186433231_1151610643_n.png?oh=fd6fd63e39d821286f072693c85d6afd&oe=582A123E)
+<hr>
 ###3.
 ``` csharp
 using System;
@@ -173,6 +237,37 @@ public class TryCatch
      }
  }
 ```
+###จากCODEเดิมผลERRORและทำการแก้CODEได้ดังต่อไปนี้
+```
+using System;
+
+
+namespace Lab8
+{
+    class Program
+    {/*Ailada S.*/
+        static void Main(string[] args)
+        {
+            try
+            {
+                int value = 800000000;
+                checked 
+                {
+                    int square = value * value;
+                    Console.WriteLine("{0} ^ 2 = {1}", value, square);
+                }
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}
+```
+###ได้ผลดังนี้
+![](https://scontent.fbkk1-1.fna.fbcdn.net/v/t34.0-12/15050272_1136873629766220_1342033232_n.png?oh=408373c1e2ed4e2e1dbe405bd675c4a2&oe=582AF7A9)
+<hr>
 ###1.1.3. คำสั่ง ```throw```
 
 คำสั่ง ```throw``` ใช้เพื่อเปลี่ยนเส้นทางการทำงานของโปรแกรมโดยเจาะจง exception เป้าหมาย
